@@ -1,0 +1,11 @@
+node_modules
+dist
+.public
+.cache
+.vscode
+.DS_Store
+public
+wrangler.toml
+.env
+*.log
+.svelte-kit

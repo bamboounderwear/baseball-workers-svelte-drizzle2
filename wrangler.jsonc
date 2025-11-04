@@ -1,0 +1,31 @@
+// Wrangler configuration for Cloudflare Workers
+{
+  "name": "baseball-workers-svelte-drizzle2",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2025-03-07",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "public"
+  },
+  "build": {
+    "command": "npm run build",
+    "cwd": "."
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  },
+  // Note: D1 is optional in Phase 1 to guarantee first deploy succeeds.
+  // We'll add the production binding in Phase 2.
+  "env": {
+    "dev": {
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "BASEBALL_DB",
+          "database_id": "local"
+        }
+      ]
+    }
+  }
+}

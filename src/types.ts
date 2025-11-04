@@ -1,0 +1,1 @@
+export type DesignTokens = Record<string, string>;
